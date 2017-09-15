@@ -1,26 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
-
+import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { DataEntryComponent } from './inputdata.component';
-import { AddEntryComponent } from './inputadd.component';
-import { PrintEntryComponent } from './inputprint.component';
+import { EntryComponent } from './entry.component';
 import { DisplayComponent } from './display.component';
+import { SharedService } from './common.service';
+
+const navRoutes: Routes = [
+  {path: 'entry', component: EntryComponent},
+  {path: 'display', component: DisplayComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
-    DataEntryComponent,
-    AddEntryComponent,
-    PrintEntryComponent,
+    EntryComponent,
     DisplayComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(navRoutes)
+
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

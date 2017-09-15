@@ -1,18 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from './common.service';
 
 @Component({
   selector: 'app-display',
   templateUrl: './display.component.html',
-  styleUrls: ['./display.component.css']
 })
 export class DisplayComponent implements OnInit {
+  studColl: Array<object>;
 
-  @Input() printing = true;
-  @Input() studentCollection;
-
-  constructor() { }
+  constructor(private dataStore: SharedService) { }
 
   ngOnInit() {
+    
+    this.studColl = this.dataStore.getStudent();
   }
 
 }

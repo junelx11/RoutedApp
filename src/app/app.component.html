@@ -1,9 +1,22 @@
+<div class = "container">
+<div class = "row">
+	<div class = "col-md-4"></div>
+	<div class = "col-md-4">
 
+   <ul class = "nav nav-tabs">
+	<li routerLink = "active">
+	<a routerLink = "/entry">Data Entry</a>
+	</li>
+	<li routerLink = "active">
+	<a routerLink = "/display">Display Data</a>
+	</li>
+   </ul>
 
-<app-data-entry #dataEntry> </app-data-entry>
-
-<app-add-entry [message]="message" (AddClicked) = "test(dataEntry.getStudent(), $event)"></app-add-entry>
-
-<app-print-entry (PrintClicked) = "listStudents()"> </app-print-entry>
-
-<app-display [printing]="printing" [studentCollection] = "studentCollection"> </app-display>
+</div>
+<div class = "col-md-4"></div>
+</div>
+<router-outlet></router-outlet>
+</div>
+<div class = "row">
+<div class = "col-md-4"></div>
+</div>
